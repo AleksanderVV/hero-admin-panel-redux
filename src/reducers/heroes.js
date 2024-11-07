@@ -1,38 +1,40 @@
-const initialState = {
-    heroes: [],
-    heroesLoadingStatus: 'idle'
-}
+// Delete file after use ReduxTools createSlice
 
-const heroes = (state = initialState, action) => {
-    switch (action.type) {
-        case 'HEROES_FETCHING':
-            return {
-                ...state,
-                heroesLoadingStatus: 'loading'
-            }
-        case 'HEROES_FETCHED':
-            return {
-                ...state,
-                heroes: action.payload,
-                heroesLoadingStatus: 'idle'
-            }
-        case 'HEROES_FETCHING_ERROR':
-            return {
-                ...state,
-                heroesLoadingStatus: 'error'
-            }
-        case 'HERO_CREATED':  
-            return {
-                ...state,
-                heroes: [...state.heroes, action.payload]
-            }
-        case 'HERO_DELETED': 
-            return {
-                ...state,
-                heroes: state.heroes.filter(item => item.id !== action.payload)
-            }
-        default: return state
-    }
-}
+// const initialState = {
+//     heroes: [],
+//     heroesLoadingStatus: 'idle'
+// }
 
-export default heroes;
+// const heroes = (state = initialState, action) => {
+//     switch (action.type) {
+//         case 'HEROES_FETCHING':
+//             return {
+//                 ...state,
+//                 heroesLoadingStatus: 'loading'
+//             }
+//         case 'HEROES_FETCHED':
+//             return {
+//                 ...state,
+//                 heroes: action.payload,
+//                 heroesLoadingStatus: 'idle'
+//             }
+//         case 'HEROES_FETCHING_ERROR':
+//             return {
+//                 ...state,
+//                 heroesLoadingStatus: 'error'
+//             }
+//         case 'HERO_CREATED':  
+//             return {
+//                 ...state,
+//                 heroes: [...state.heroes, action.payload]
+//             }
+//         case 'HERO_DELETED': 
+//             return {
+//                 ...state,
+//                 heroes: state.heroes.filter(item => item.id !== action.payload)
+//             }
+//         default: return state
+//     }
+// }
+
+// export default heroes;

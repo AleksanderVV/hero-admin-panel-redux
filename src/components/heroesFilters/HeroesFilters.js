@@ -3,7 +3,8 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import classNames from 'classnames';
 
-import { fetchFilters, activeFilterChanged } from '../../actions';
+import { fetchFilters } from '../../actions';
+import { activeFilterChanged } from './filterSlice';
 import Spinner from '../spinner/Spinner';
 
 const HeroesFilters = () => {
@@ -31,7 +32,6 @@ const HeroesFilters = () => {
         if (arr.length === 0) {
             return <h5 className="text-center mt-5">Фильтры не найдены</h5>
         }
-
         return arr.map(({name, className, label}) => {
 
             const btnClass = classNames('btn', className, {
